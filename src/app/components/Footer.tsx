@@ -64,17 +64,25 @@ export function Footer() {
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">
-                Adventure Tours
+              <li>
+                <Link to="/tours?category=adventure" className="hover:text-blue-400 transition-colors">
+                  Adventure Tours
+                </Link>
               </li>
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">
-                Beach Holidays
+              <li>
+                <Link to="/tours?category=beach" className="hover:text-blue-400 transition-colors">
+                  Beach Holidays
+                </Link>
               </li>
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">
-                Cultural Trips
+              <li>
+                <Link to="/tours?category=cultural" className="hover:text-blue-400 transition-colors">
+                  Cultural Trips
+                </Link>
               </li>
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">
-                Luxury Travel
+              <li>
+                <Link to="/tours?category=luxury" className="hover:text-blue-400 transition-colors">
+                  Luxury Travel
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,11 +1,19 @@
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { MapPin, Calendar, Users, Star, Clock } from "lucide-react";
-import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router";
 
 export function Tours() {
+  const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const category = searchParams.get('category');
+    if (category) {
+      setSelectedCategory(category);
+    }
+  }, [searchParams]);
 
   const categories = [
     { id: "all", label: "All Tours" },
