@@ -32,7 +32,7 @@ export function Navbar() {
             <div className="bg-blue-600 p-2 rounded-lg">
               <Plane className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-bold text-gray-900">Wanderlust</span>
+            <span className="text-2xl font-bold text-gray-900">Yatra India</span>
           </Link>
 
           {/* Desktop Navigation */}

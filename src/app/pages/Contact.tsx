@@ -43,17 +43,17 @@ export function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
+      details: ["+91 98765 43210", "+91 98765 43211"],
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@wanderlust.com", "support@wanderlust.com"],
+      details: ["info@yatraindia.com", "support@yatraindia.com"],
     },
     {
       icon: MapPin,
       title: "Address",
-      details: ["123 Travel Street", "Wanderlust City, TC 12345"],
+      details: ["123 MG Road", "Mumbai, Maharashtra 400001"],
     },
     {
       icon: Clock,
@@ -189,12 +189,12 @@ export function Contact() {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                     >
                       <option value="">Select a destination</option>
-                      <option value="maldives">Maldives</option>
-                      <option value="switzerland">Switzerland</option>
-                      <option value="france">France</option>
-                      <option value="japan">Japan</option>
-                      <option value="tanzania">Tanzania</option>
-                      <option value="iceland">Iceland</option>
+                      <option value="taj-mahal">Taj Mahal, Agra</option>
+                      <option value="kerala">Kerala Backwaters</option>
+                      <option value="rajasthan">Rajasthan</option>
+                      <option value="goa">Goa</option>
+                      <option value="ladakh">Ladakh</option>
+                      <option value="varanasi">Varanasi</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
@@ -251,15 +251,18 @@ export function Contact() {
         </div>
       </div>
 
-      {/* Map Section (Placeholder) */}
-      <div className="bg-gray-300 h-96 relative">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="w-16 h-16 text-gray-500 mx-auto mb-4" />
-            <p className="text-gray-600 text-lg">Map Location</p>
-            <p className="text-gray-500">123 Travel Street, Wanderlust City</p>
-          </div>
-        </div>
+      {/* Map Section */}
+      <div className="h-96 relative">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709658!3d19.082177826740436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Mumbai Location"
+        ></iframe>
       </div>
     </div>
   );

@@ -3,9 +3,9 @@ import { Users, Award, Globe, Heart, Target, Zap } from "lucide-react";
 
 export function About() {
   const stats = [
-    { icon: Users, value: "50K+", label: "Happy Travelers" },
-    { icon: Globe, value: "500+", label: "Destinations" },
-    { icon: Award, value: "15+", label: "Awards Won" },
+    { icon: Users, value: "25K+", label: "Happy Travelers" },
+    { icon: Globe, value: "100+", label: "Indian Destinations" },
+    { icon: Award, value: "10+", label: "Awards Won" },
     { icon: Heart, value: "98%", label: "Satisfaction Rate" },
   ];
 
@@ -63,9 +63,9 @@ export function About() {
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl mb-4">About Wanderlust</h1>
+          <h1 className="text-5xl mb-4">About Yatra India</h1>
           <p className="text-xl max-w-2xl">
-            Creating unforgettable travel experiences since 2010
+            Creating unforgettable Indian travel experiences since 2010
           </p>
         </div>
       </div>
@@ -92,13 +92,13 @@ export function About() {
             <h2 className="text-4xl mb-6">Our Story</h2>
             <div className="space-y-4 text-gray-600">
               <p>
-                Founded in 2010 by a group of passionate travelers, Wanderlust began with a simple 
-                mission: to make extraordinary travel experiences accessible to everyone.
+                Founded in 2010 by a group of passionate Indian travelers, Yatra India began with a simple 
+                mission: to showcase the incredible diversity and beauty of India to travelers.
               </p>
               <p>
                 Over the past 16 years, we've grown from a small startup to one of the most trusted 
-                names in travel, serving over 50,000 happy travelers and expanding to 500+ 
-                destinations worldwide.
+                names in Indian travel, serving over 25,000 happy travelers and expanding to 100+ 
+                destinations across India.
               </p>
               <p>
                 What sets us apart is our commitment to creating authentic, immersive experiences 
@@ -170,7 +170,7 @@ export function About() {
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-4xl mb-6">Join Our Travel Community</h2>
           <p className="text-xl mb-8">
-            Start your adventure with Wanderlust today
+            Start your Indian adventure with Yatra India today
           </p>
           <button className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
             Explore Tours

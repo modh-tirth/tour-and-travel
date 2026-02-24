@@ -6,48 +6,48 @@ export function Home() {
   const popularDestinations = [
     {
       id: 1,
-      name: "Tropical Paradise",
-      location: "Maldives",
-      image: "https://images.unsplash.com/photo-1714412192114-61dca8f15f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGJlYWNoJTIwcGFyYWRpc2V8ZW58MXx8fHwxNzcxNTQ1MDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      price: "$2,499",
-      duration: "7 Days",
+      name: "Taj Mahal Tour",
+      location: "Agra, India",
+      image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1080",
+      price: "₹12,999",
+      duration: "3 Days",
     },
     {
       id: 2,
-      name: "Mountain Adventure",
-      location: "Swiss Alps",
-      image: "https://images.unsplash.com/photo-1673505413397-0cd0dc4f5854?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGxhbmRzY2FwZSUyMGFkdmVudHVyZXxlbnwxfHx8fDE3NzE1NjI3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      price: "$1,899",
+      name: "Kerala Backwaters",
+      location: "Kerala, India",
+      image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1080",
+      price: "₹18,999",
       duration: "5 Days",
     },
     {
       id: 3,
-      name: "European Elegance",
-      location: "Paris, France",
-      image: "https://images.unsplash.com/photo-1725806760874-96040618865c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldXJvcGVhbiUyMGNpdHklMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzcxNTE2OTkxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      price: "$1,599",
-      duration: "6 Days",
+      name: "Rajasthan Heritage",
+      location: "Jaipur, India",
+      image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1080",
+      price: "₹15,999",
+      duration: "4 Days",
     },
     {
       id: 4,
-      name: "Asian Heritage",
-      location: "Kyoto, Japan",
-      image: "https://images.unsplash.com/photo-1684613998803-83fe7787db15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHRlbXBsZSUyMHRyYXZlbHxlbnwxfHx8fDE3NzE0OTEwMDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      price: "$2,199",
-      duration: "8 Days",
+      name: "Goa Beach Paradise",
+      location: "Goa, India",
+      image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1080",
+      price: "₹14,999",
+      duration: "4 Days",
     },
   ];
 
   const features = [
     {
       icon: Globe,
-      title: "500+ Destinations",
-      description: "Explore amazing places around the world",
+      title: "100+ Destinations",
+      description: "Explore incredible India from Kashmir to Kanyakumari",
     },
     {
       icon: Award,
       title: "Best Price Guarantee",
-      description: "We offer the most competitive prices",
+      description: "Affordable packages for every budget",
     },
     {
       icon: Shield,
@@ -57,7 +57,7 @@ export function Home() {
     {
       icon: HeadphonesIcon,
       title: "24/7 Support",
-      description: "We're here to help anytime, anywhere",
+      description: "Hindi & English support available",
     },
   ];
 
@@ -67,17 +67,17 @@ export function Home() {
       <section className="relative h-[600px] flex items-center justify-center">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1546403989-f07ddb443ad8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZHZlbnR1cmUlMjBoaWtpbmclMjBjb3VwbGV8ZW58MXx8fHwxNzcxNTg0ODM1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Adventure"
+            src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1080"
+            alt="India Travel"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
-          <h1 className="text-5xl md:text-6xl mb-6">Discover Your Next Adventure</h1>
+          <h1 className="text-5xl md:text-6xl mb-6">Discover Incredible India</h1>
           <p className="text-xl md:text-2xl mb-8">
-            Explore breathtaking destinations and create unforgettable memories
+            Explore India's rich heritage, diverse culture, and breathtaking landscapes
           </p>
           
           {/* Search Box */}
@@ -140,9 +140,9 @@ export function Home() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl mb-4">Popular Destinations</h2>
+            <h2 className="text-4xl mb-4">Popular Indian Destinations</h2>
             <p className="text-xl text-gray-600">
-              Discover our most sought-after travel experiences
+              Discover the beauty and diversity of India
             </p>
           </div>
 

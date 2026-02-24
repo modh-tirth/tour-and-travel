@@ -12,10 +12,10 @@ export function Footer() {
               <div className="bg-blue-600 p-2 rounded-lg">
                 <Plane className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold text-white">Wanderlust</span>
+              <span className="text-2xl font-bold text-white">Yatra India</span>
             </div>
             <p className="text-sm mb-4">
-              Explore the world with us. Creating unforgettable travel experiences since 2010.
+              Explore incredible India with us. Creating unforgettable travel experiences across India since 2010.
             </p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-blue-400 transition-colors">
@@ -93,22 +93,22 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span className="text-sm">123 Travel Street, Wanderlust City, TC 12345</span>
+                <span className="text-sm">Mumbai, Maharashtra, India 400001</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 flex-shrink-0" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+91 98765 43210</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <span className="text-sm">info@wanderlust.com</span>
+                <span className="text-sm">info@yatraindia.com</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-          <p>&copy; 2026 Wanderlust Travel. All rights reserved.</p>
+          <p>&copy; 2026 Yatra India Travel. All rights reserved.</p>
         </div>
       </div>
     </footer>

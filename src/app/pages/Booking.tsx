@@ -20,11 +20,11 @@ export function Booking() {
 
   // Booking Details
   const [bookingDetails, setBookingDetails] = useState({
-    destination: "Maldives Paradise Escape",
+    destination: "Golden Triangle Tour",
     travelers: 2,
     date: "",
-    duration: "7 Days / 6 Nights",
-    price: 2499,
+    duration: "6 Days / 5 Nights",
+    price: 24999,
   });
 
   // Personal Details
@@ -110,7 +110,7 @@ export function Booking() {
             <div className="space-y-3 text-gray-700">
               <div className="flex justify-between">
                 <span>Booking ID:</span>
-                <span className="font-semibold">WL{Date.now()}</span>
+                <span className="font-semibold">YI{Date.now()}</span>
               </div>
               <div className="flex justify-between">
                 <span>Destination:</span>
@@ -161,7 +161,7 @@ export function Booking() {
             Back
           </button>
           <h1 className="text-4xl mb-2">Complete Your Booking</h1>
-          <p className="text-gray-600">Secure payment gateway powered by Wanderlust</p>
+          <p className="text-gray-600">Secure payment gateway powered by Yatra India</p>
         </div>
 
         {/* Progress Steps */}
@@ -424,7 +424,7 @@ export function Booking() {
                       type="submit"
                       className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors"
                     >
-                      Pay ${grandTotal.toFixed(2)}
+                      Pay ₹{grandTotal.toFixed(2)}
                     </button>
                   </div>
                 </form>
@@ -487,16 +487,16 @@ export function Booking() {
                   <span className="text-gray-600">
                     Price per person × {bookingDetails.travelers}
                   </span>
-                  <span>${totalPrice.toFixed(2)}</span>
+                  <span>₹{totalPrice.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Taxes & Fees</span>
-                  <span>${taxes.toFixed(2)}</span>
+                  <span>₹{taxes.toFixed(2)}</span>
                 </div>
                 <div className="border-t pt-3 flex justify-between items-center">
                   <span className="text-lg">Total</span>
                   <span className="text-2xl text-blue-600">
-                    ${grandTotal.toFixed(2)}
+                    ₹{grandTotal.toFixed(2)}
                   </span>
                 </div>
               </div>

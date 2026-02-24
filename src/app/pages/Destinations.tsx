@@ -8,56 +8,56 @@ export function Destinations() {
   const destinations = [
     {
       id: 1,
-      name: "Maldives",
-      country: "Indian Ocean",
-      description: "Crystal clear waters and pristine beaches await you in this tropical paradise.",
+      name: "Taj Mahal",
+      country: "Agra, Uttar Pradesh",
+      description: "Marvel at the iconic symbol of love, one of the Seven Wonders of the World.",
       tours: 12,
-      image: "https://images.unsplash.com/photo-1714412192114-61dca8f15f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGJlYWNoJTIwcGFyYWRpc2V8ZW58MXx8fHwxNzcxNTQ1MDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1080",
       trending: true,
     },
     {
       id: 2,
-      name: "Swiss Alps",
-      country: "Switzerland",
-      description: "Majestic mountains and charming villages in the heart of Europe.",
+      name: "Kerala Backwaters",
+      country: "Kerala",
+      description: "Experience serene houseboat cruises through lush green landscapes.",
       tours: 15,
-      image: "https://images.unsplash.com/photo-1673505413397-0cd0dc4f5854?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGxhbmRzY2FwZSUyMGFkdmVudHVyZXxlbnwxfHx8fDE3NzE1NjI3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1080",
       trending: false,
     },
     {
       id: 3,
-      name: "Paris",
-      country: "France",
-      description: "The city of lights offers romance, culture, and unforgettable experiences.",
+      name: "Jaipur",
+      country: "Rajasthan",
+      description: "The Pink City offers majestic forts, palaces, and vibrant culture.",
       tours: 18,
-      image: "https://images.unsplash.com/photo-1725806760874-96040618865c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldXJvcGVhbiUyMGNpdHklMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzcxNTE2OTkxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1080",
       trending: true,
     },
     {
       id: 4,
-      name: "Kyoto",
-      country: "Japan",
-      description: "Ancient temples, traditional gardens, and rich cultural heritage.",
+      name: "Goa Beaches",
+      country: "Goa",
+      description: "Sun, sand, and sea with Portuguese heritage and vibrant nightlife.",
       tours: 14,
-      image: "https://images.unsplash.com/photo-1684613998803-83fe7787db15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHRlbXBsZSUyMHRyYXZlbHxlbnwxfHx8fDE3NzE0OTEwMDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1080",
       trending: true,
     },
     {
       id: 5,
-      name: "Serengeti",
-      country: "Tanzania",
-      description: "Witness the great migration and experience the wild side of Africa.",
+      name: "Ladakh",
+      country: "Jammu & Kashmir",
+      description: "High altitude desert with stunning landscapes and Buddhist monasteries.",
       tours: 10,
-      image: "https://images.unsplash.com/photo-1729359035276-189519a4b072?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWZhcmklMjB3aWxkbGlmZSUyMGFmcmljYXxlbnwxfHx8fDE3NzE0OTg3OTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1080",
       trending: false,
     },
     {
       id: 6,
-      name: "Iceland",
-      country: "Nordic Region",
-      description: "Land of fire and ice with stunning natural phenomena.",
+      name: "Varanasi",
+      country: "Uttar Pradesh",
+      description: "Ancient spiritual city on the banks of the holy Ganges River.",
       tours: 11,
-      image: "https://images.unsplash.com/photo-1648607560570-4ee80c5914c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub3J0aGVybiUyMGxpZ2h0cyUyMGF1cm9yYXxlbnwxfHx8fDE3NzE0ODAyODV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1080",
       trending: true,
     },
   ];
@@ -75,9 +75,9 @@ export function Destinations() {
       {/* Header */}
       <div className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl mb-4">Explore Destinations</h1>
+          <h1 className="text-5xl mb-4">Explore India</h1>
           <p className="text-xl">
-            Discover amazing places around the world waiting to be explored
+            Discover incredible destinations across India waiting to be explored
           </p>
         </div>
       </div>
