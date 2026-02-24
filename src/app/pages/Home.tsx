@@ -1,8 +1,31 @@
 import { Link } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Search, MapPin, Calendar, Users, Star, ArrowRight, Globe, Award, Shield, HeadphonesIcon } from "lucide-react";
+import { useState } from "react";
 
 export function Home() {
+  const [selectedDate, setSelectedDate] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const destinations = [
+    "Taj Mahal, Agra",
+    "Kerala Backwaters",
+    "Jaipur, Rajasthan",
+    "Goa Beaches",
+    "Ladakh",
+    "Varanasi",
+    "Mumbai",
+    "Delhi",
+    "Udaipur",
+    "Manali",
+    "Shimla",
+    "Andaman Islands",
+  ];
+
+  const filteredDestinations = destinations.filter(dest =>
+    dest.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   const popularDestinations = [
     {
       id: 1,
@@ -75,6 +98,7 @@ export function Home() {
         </div>
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
+          <p className="text-3xl md:text-4xl mb-4 font-bold text-orange-400" style={{ fontFamily: 'serif' }}>सु स्वागतम</p>
           <h1 className="text-5xl md:text-6xl mb-6">Discover Incredible India</h1>
           <p className="text-xl md:text-2xl mb-8">
             Explore India's rich heritage, diverse culture, and breathtaking landscapes
@@ -83,18 +107,46 @@ export function Home() {
           {/* Search Box */}
           <div className="bg-white rounded-lg shadow-xl p-6 max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="flex items-center gap-2 border-b md:border-b-0 md:border-r border-gray-300 pb-4 md:pb-0 md:pr-4">
+              <div className="relative flex items-center gap-2 border-b md:border-b-0 md:border-r border-gray-300 pb-4 md:pb-0 md:pr-4">
                 <MapPin className="w-5 h-5 text-blue-600" />
                 <input
                   type="text"
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setShowSuggestions(true);
+                  }}
+                  onFocus={() => setShowSuggestions(true)}
+                  onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                   placeholder="Where to?"
                   className="w-full outline-none text-gray-700"
                 />
+                {showSuggestions && searchQuery && filteredDestinations.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
+                    {filteredDestinations.map((dest, index) => (
+                      <div
+                        key={index}
+                        onMouseDown={(e) => {
+                          e.preventDefault();
+                          setSearchQuery(dest);
+                          setShowSuggestions(false);
+                        }}
+                        className="px-4 py-3 hover:bg-blue-50 cursor-pointer flex items-center gap-2 text-gray-700"
+                      >
+                        <MapPin className="w-4 h-4 text-blue-600" />
+                        {dest}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
               <div className="flex items-center gap-2 border-b md:border-b-0 md:border-r border-gray-300 pb-4 md:pb-0 md:pr-4">
                 <Calendar className="w-5 h-5 text-blue-600" />
                 <input
-                  type="text"
+                  type="date"
+                  value={selectedDate}
+                  onChange={(e) => setSelectedDate(e.target.value)}
+                  min={new Date().toISOString().split('T')[0]}
                   placeholder="When?"
                   className="w-full outline-none text-gray-700"
                 />
@@ -169,13 +221,19 @@ export function Home() {
                     <MapPin className="w-4 h-4" />
                     {destination.location}
                   </p>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center mb-3">
                     <div>
                       <span className="text-2xl text-blue-600">{destination.price}</span>
                       <span className="text-gray-600 text-sm ml-2">per person</span>
                     </div>
                     <span className="text-gray-600 text-sm">{destination.duration}</span>
                   </div>
+                  <Link
+                    to="/booking"
+                    className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                  >
+                    Book Now
+                  </Link>
                 </div>
               </div>
             ))}
