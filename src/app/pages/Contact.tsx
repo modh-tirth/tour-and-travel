@@ -15,21 +15,32 @@ export function Contact() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        destination: "",
-        travelers: "",
-        date: "",
-        message: "",
+    try {
+      const response = await fetch('http://localhost:5001/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
-      setSubmitted(false);
-    }, 3000);
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            destination: "",
+            travelers: "",
+            date: "",
+            message: "",
+          });
+          setSubmitted(false);
+        }, 3000);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

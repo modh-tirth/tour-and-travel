@@ -62,12 +62,48 @@ export function Booking() {
     });
   };
 
-  const handleSubmitPayment = (e: React.FormEvent) => {
+  const handleSubmitPayment = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate payment processing
-    setTimeout(() => {
-      setPaymentSuccess(true);
-    }, 2000);
+    try {
+      // Save booking
+      const bookingData = {
+        tourName: bookingDetails.destination,
+        destination: bookingDetails.destination,
+        startDate: bookingDetails.date,
+        numberOfTravelers: bookingDetails.travelers,
+        totalPrice: grandTotal,
+        customerName: `${personalDetails.firstName} ${personalDetails.lastName}`,
+        customerEmail: personalDetails.email,
+        customerPhone: personalDetails.phone,
+        status: 'confirmed'
+      };
+      const bookingRes = await fetch('http://localhost:5001/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(bookingData)
+      });
+      const booking = await bookingRes.json();
+
+      // Save payment
+      const paymentData = {
+        bookingId: booking.data._id,
+        amount: grandTotal,
+        paymentMethod: 'card',
+        cardNumber: paymentDetails.cardNumber.slice(-4),
+        cardHolderName: paymentDetails.cardName
+      };
+      await fetch('http://localhost:5001/api/payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(paymentData)
+      });
+
+      setTimeout(() => {
+        setPaymentSuccess(true);
+      }, 2000);
+    } catch (error) {
+      console.error('Error processing payment:', error);
+    }
   };
 
   const totalPrice = bookingDetails.price * bookingDetails.travelers;

@@ -20,31 +20,43 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
 
   const login = async (email: string, password: string) => {
-    // Mock login - in real app, this would call an API
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const response = await fetch('/api/auth/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
     
-    const mockUser = {
-      id: "1",
-      name: email.split("@")[0],
-      email: email,
-    };
+    if (!response.ok) {
+      throw new Error('Login failed');
+    }
     
-    setUser(mockUser);
-    localStorage.setItem("user", JSON.stringify(mockUser));
+    const data = await response.json();
+    setUser(data.user);
+    localStorage.setItem('user', JSON.stringify(data.user));
+    localStorage.setItem('token', data.token);
   };
 
   const signup = async (name: string, email: string, password: string) => {
-    // Mock signup - in real app, this would call an API
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    const mockUser = {
-      id: Date.now().toString(),
-      name: name,
-      email: email,
-    };
-    
-    setUser(mockUser);
-    localStorage.setItem("user", JSON.stringify(mockUser));
+    try {
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password })
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || 'Signup failed');
+      }
+      
+      setUser(data.user);
+      localStorage.setItem('user', JSON.stringify(data.user));
+      localStorage.setItem('token', data.token);
+    } catch (error) {
+      console.error('Signup error:', error);
+      throw error;
+    }
   };
 
   const logout = () => {
